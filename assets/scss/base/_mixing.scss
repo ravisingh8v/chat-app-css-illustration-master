@@ -32,7 +32,5 @@
 // background theme
 @mixin similar-bg-theme {
   position: absolute;
-  width: 35%;
-  height: 850px;
   background: $gradient;
 }

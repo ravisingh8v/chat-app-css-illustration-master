@@ -13,6 +13,10 @@ body {
   overflow: hidden;
   font-family: $font-primary;
 }
+// Font Family
+.font-primary {
+  font-family: $font-primary;
+}
 
 //================= helper classes ==================//
 //================= Display classes
@@ -35,8 +39,17 @@ body {
 .justify-center {
   justify-content: center;
 }
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
+}
 .align-items-center {
   align-items: center;
+}
+.align-items-end {
+  align-items: flex-end;
 }
 
 //================= widths
@@ -45,6 +58,12 @@ body {
 }
 .w-50 {
   width: 50%;
+}
+.w-60 {
+  width: 60%;
+}
+.w-70 {
+  width: 70%;
 }
 .w-75 {
   width: 75%;
@@ -90,9 +109,37 @@ body {
   white-space: nowrap;
 }
 
-// Font Family
-.font-primary {
-  font-family: $font-primary;
+// border
+
+.rounded {
+  border-radius: 10px;
+}
+
+// backgroung color
+.bg-white {
+  background-color: $White;
+}
+
+.bg_left_chat {
+  background-color: hsla(276, 100%, 81%, 0.185);
+}
+.bg_price {
+  background: $gradient-to-right;
+}
+
+// Radius
+
+.left-chat-radius {
+  border-radius: 15px 15px 15px 5px;
+  color: $chat-primary;
+}
+.right-chat-radius {
+  border-radius: 15px 15px 5px 15px;
+  color: $chat-secondary;
 }
 
 // ========================= CUSTOM CSS ========================== //
+
+.fs-chat {
+  font-size: 10px;
+}

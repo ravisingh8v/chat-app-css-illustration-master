@@ -39,19 +39,19 @@ $spacer: (
 // For Margins
 @each $key, $value in $spacer {
   .m-#{$key} {
-    padding: #{$value}px;
+    margin: #{$value}px;
   }
   .mt-#{$key} {
-    padding-top: #{$value}px;
+    margin-top: #{$value}px;
   }
   .ms-#{$key} {
-    padding-left: #{$value}px;
+    margin-left: #{$value}px;
   }
   .me-#{$key} {
-    padding-right: #{$value}px;
+    margin-right: #{$value}px;
   }
   .mb-#{$key} {
-    padding-bottom: #{$value}px;
+    margin-bottom: #{$value}px;
   }
   .mx-#{$key} {
     @include mx(#{$value}px);

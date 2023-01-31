@@ -1,6 +1,5 @@
 // font
 $font-primary: "Rubik", sans-serif;
-$font-secondary: "";
 
 $secondary: hsl(276, 100%, 81%);
 $chat-primary: hsl(276, 55%, 52%);
@@ -8,7 +7,7 @@ $chat-secondary: hsl(271, 15%, 43%);
 $placeholder: hsl(206, 6%, 79%);
 $heading: hsl(271, 36%, 24%);
 $para: hsl(270, 7%, 64%);
-
+$left-chat-bg: #ede5f4;
 // #### Gradients
 
 // These two colors are the vibrant background colors you see throughout the design and are applied as a linear gradient:
@@ -17,6 +16,11 @@ $Light-Magenta: hsl(293, 100%, 63%);
 $Light-Violet: hsl(264, 100%, 61%);
 
 $gradient: linear-gradient(hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+$gradient-to-right: linear-gradient(
+  to right,
+  hsl(293, 100%, 63%),
+  hsl(264, 100%, 61%)
+);
 // ### Secondary
 
 $White: hsl(0, 0%, 100%);

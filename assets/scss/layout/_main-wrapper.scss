@@ -1,39 +1,77 @@
+// Main Wrapper
 .main_wrapper {
   overflow: hidden;
   background-color: $Light-Grayish-Violet;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
+  @media (max-width: 720px) {
+    padding: 0;
+    overflow: auto;
+  }
 }
 
 // background theme
-
 .background_top {
   top: 0;
   left: -5%;
   border-radius: 0 0 350px 300px;
+  width: 35%;
+  height: 850px;
   @include similar-bg-theme;
   z-index: -0;
+  @media (max-width: 1430px) {
+    left: -10%;
+  }
+  @media (max-width: 1090px) {
+    height: 770px;
+  }
+  @media (max-width: 920px) {
+    width: 48%;
+    left: -5%;
+    height: 640px;
+  }
+  @media (max-width: 400px) {
+    left: -15%;
+    height: 560px;
+    width: 45%;
+  }
 }
 .background_bottom {
   bottom: 0;
   right: -15%;
+  width: 35%;
+  height: 850px;
   border-radius: 350px 300px 0 0;
   opacity: 0.03;
   @include similar-bg-theme;
+  @media (max-width: 1090px) {
+    height: 770px;
+  }
 }
+
+// Main Container start :: wrapper of left side and ride section
 .container {
   width: 80%;
-  //   height: 10px;
-  //   border: 2px solid red;
   z-index: 500;
   position: relative;
   left: 15%;
   display: flex;
   align-items: center;
+  @media (max-width: 1430px) {
+    left: 8%;
+  }
+  @media (max-width: 920px) {
+    flex-direction: column;
+    left: 5%;
+    top: 3%;
+  }
+  @media (max-width: 400px) {
+    top: 1%;
+  }
 }
+
+// left Mobile Container
 .mobile_wrapper {
-  height: 590px;
+  height: 620px;
   width: 300px;
   background-color: white;
   z-index: 2;
@@ -41,9 +79,23 @@
   margin-right: 80px;
   //   border: 2px solid green;
   padding: 10px;
-  box-shadow: 2px 2px 5px grey;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.045),
+    0px 0px 80px rgba(0, 0, 0, 0.09);
   position: relative;
+  @media (max-width: 1090px) {
+    margin-right: 50px;
+  }
+  @media (max-width: 920px) {
+    height: 604px;
+  }
+  @media (max-width: 400px) {
+    margin-right: 0;
+    height: 577px;
+    width: 275px;
+    padding: 5px;
+  }
 }
+// right content wrapper
 .content_wrapper {
   width: 45%;
   margin-left: 80px;
@@ -51,13 +103,33 @@
     font-size: 45px;
     color: $heading;
     font-weight: 500;
+    @media (max-width: 920px) {
+      font-size: 35px;
+    }
   }
   p {
     font-size: 18px;
     color: $para;
     line-height: 1.8;
+    @media (max-width: 920px) {
+      font-size: 16px;
+    }
+    @media (max-width: 580px) {
+      margin-top: 10px;
+    }
+  }
+  @media (max-width: 920px) {
+    width: 60%;
+    margin-left: 0;
+    text-align: center;
+    margin-top: 40px;
+  }
+  @media (max-width: 580px) {
+    width: 100%;
   }
 }
+
+// Mobile Notch
 .notch {
   position: absolute;
   top: 0;
@@ -68,11 +140,85 @@
   background-color: $White;
   z-index: 300;
   border-radius: 30px;
+  @media (max-width: 400px) {
+    height: 20px;
+  }
 }
 
 .mobile_screen {
   background-color: $Light-Grayish-Violet;
   height: 100%;
   border-radius: 30px;
+  overflow: hidden;
   //   border: 1px solid red;
+}
+
+// header :: username profile and status
+.mobile_header {
+  height: 80px;
+  background: $gradient;
+  border-radius: 30px 30px 10px 10px;
+  @media (max-width: 920px) {
+    height: 65px;
+  }
+}
+// user profile pic wrapper
+.profile_wrapper {
+  height: 35px;
+  width: 35px;
+  border: 2px solid $White;
+  border-radius: 50%;
+  overflow: hidden;
+  img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+// Dogs Pic CSS
+.dogs {
+  height: 55px;
+  width: 55px;
+  border-radius: 10px;
+}
+// Custom Radio Button Styles
+.circle {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 1px solid $White;
+}
+#rate1:checked + .circle,
+#rate2:checked + .circle {
+  background-color: white;
+}
+
+// Input Style
+.input_wrapper {
+  position: relative;
+  .send_button {
+    position: absolute;
+    color: white;
+    font-size: 15px;
+    height: 25px;
+    width: 25px;
+    @include flex-center;
+    background-color: $Darkest-Desaturated-Violet;
+    border-radius: 50%;
+    right: 7%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .input {
+    border: none;
+    padding: 10px;
+    border-radius: 30px;
+    outline: none;
+    padding-left: 20px;
+    &::placeholder {
+      color: $placeholder;
+      font-size: 12px;
+    }
+  }
 }
